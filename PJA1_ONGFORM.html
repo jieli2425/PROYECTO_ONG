@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulari d'adopció</title>
+    <title>Formulario de adopción</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -22,15 +22,15 @@
                     <!-- Dropdown de Bootstrap per a Animales -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Animals
+                            Animales
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="adopcio.html">Adopció</a></li>
-                            <li><a class="dropdown-item" href="#">Adoptats</a></li>
+                            <li><a class="dropdown-item" href="adopcio.html">Adopción</a></li>
+                            <li><a class="dropdown-item" href="#">Adoptados</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="adopcio.html">Formulari</a>
+                        <a class="nav-link active" href="adopcio.html">Formulario</a>
                     </li>
                 </ul>
             </div>
@@ -38,40 +38,36 @@
     </nav>
 
     <div class="container mt-5">
-        <h3>Formulari d'adopció</h3>
+        <h3>Formulario de adopcinó</h3>
         <form id="adoption-form" class="needs-validation" novalidate>
             <div class="mb-3">
-                <label for="nom" class="form-label">Nom complet:</label>
+                <label for="nom" class="form-label">Nombre completo:</label>
                 <input type="text" class="form-control" id="nom" name="nom" required>
-                <div class="invalid-feedback">El nom és obligatori.</div>
             </div>
 
             <div class="mb-3">
-                <label for="email" class="form-label">Correu electrònic:</label>
+                <label for="email" class="form-label">Correo electrónico:</label>
                 <input type="email" class="form-control" id="email" name="email" required>
-                <div class="invalid-feedback">Si us plau, introdueix un correu electrònic vàlid.</div>
             </div>
 
             <div class="mb-3">
-                <label for="animal-select" class="form-label">Selecciona l'animal a adoptar:</label>
+                <label for="animal-select" class="form-label">Selecciona el animal para adoptar:</label>
                 <select class="form-select" id="animal-select" name="animal" required>
                     <option value="" selected disabled>Selecciona un animal...</option>
                     <!-- Les opcions d'animals es generaran amb JavaScript -->
                 </select>
-                <div class="invalid-feedback">Selecciona un animal a adoptar.</div>
             </div>
 
             <div class="mb-3">
-                <label for="message" class="form-label">Missatge:</label>
-                <textarea class="form-control" id="message" name="message" rows="4" placeholder="Explica per què vols adoptar aquest animal..." required></textarea>
-                <div class="invalid-feedback">Aquest camp és obligatori.</div>
+                <label for="message" class="form-label">Mensaje:</label>
+                <textarea class="form-control" id="message" name="message" rows="4" placeholder="Explica porque quiere adoptar este animal...." required></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary">Enviar sol·licitud</button>
+            <button type="submit" class="btn btn-primary">Enviar solicitud</button>
         </form>
 
         <div id="success-message" class="alert alert-success mt-3" style="display: none;">
-            Sol·licitud enviada amb èxit!
+            Solicitud enviada con éxito!
         </div>
     </div>
 

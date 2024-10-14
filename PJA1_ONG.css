@@ -4,7 +4,6 @@ body{
 .txt1{
     margin-top:0%;
     text-align: center;
-    background-color: rgb(149, 249, 149);
     font-size: 50px;
 }
 
@@ -12,9 +11,7 @@ a {
     text-decoration: none;
     color: #000;
 }
-.navbar{
-    background-color: rgb(149, 249, 149);
-}
+
 .navbar-links {
     list-style: none;
     margin-left: 35%;
