@@ -2,23 +2,46 @@ body{
     margin: auto;
 }
 .txt1{
-    margin-top:0%;
-    text-align: center;
+    margin-top:10%;
     font-size: 50px;
+
 }
 
-a {
+a{
     text-decoration: none;
+    color: black;
+}
+
+.navbar-a{
     color: #000;
 }
+.img1{
+    margin-left: 5%;
+    width: 20%;
+}
 
+.navbar{
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar-header{
+    display: flex;
+}
+.navbar-header2{
+    margin-left: 40%;
+}
 .navbar-links {
     list-style: none;
-    margin-left: 35%;
     display: flex;
-    gap: 20px;
+    justify-content: space-around;
     font-size: 30px;
+    background-color: #000;
+    padding: 30px;
 }
+.navbar-links, a{
+    color: white;
+}   
 
 /* desplegable de animal */
 .dropdown {
@@ -102,3 +125,12 @@ button:hover {
 }
 
 
+
+/* Parte del archivo ONGFORM */
+/* .collapse{
+    margin-left: 20%;
+}
+
+.nav-item{
+    margin-left: 30%;
+} */
