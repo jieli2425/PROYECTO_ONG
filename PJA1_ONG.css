@@ -135,12 +135,45 @@ p{
 
 .contenedor-footer{
     background-color: #000;
+    padding-bottom: 200px;
 }
+.section-contenedor{
+    display: flex;
+    justify-content: space-between;
 
-.contenedor-footer > img{
+}
+.contenedor-footer >.section-contenedor> div>img{
     filter: invert(1);
 }
+.imgfooter{
+    max-width:8% ;
 
+}
+.contenedor-footer > div > h2{
+    text-align: left;
+}
+.contenedor-footer2{
+    margin-right: 50px;
+}
+.contenedor-footer1{
+    margin-left:auto;
+}
+
+.contenedor-footer1,.contenedor-footer2,.contenedor-footer3{
+    color:white;
+}
+.contenedor-footer1 > h2{
+    color:white;
+}
+.contenedor-footer2 > h2{
+    color:white;
+}
+.contenedor-footer3 > h2{
+    color:white;
+}
+h3{
+    color:white;
+}
 
 
 /* Parte del PJA1_ONGADOPTADOS.html */
@@ -193,7 +226,6 @@ button {
 button:hover {
     background-color: #0056b3;
 }
-
 
 
 /* Parte del archivo ONGFORM */
