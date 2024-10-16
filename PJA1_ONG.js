@@ -3,7 +3,13 @@ const animals = [
     { id: 1, nom: "Lucas", descripcio: "Un gos gran i amigable.", imatge: "./IMG/pexels-pixabay-247937.jpg" },
     { id: 2, nom: "Mariano", descripcio: "Un gat juganer i afectuós.", imatge: "./IMG/Gato4.jpg" },
     { id: 3, nom: "Filemon", descripcio: "Un ocell que canta molt bé.", imatge: "./IMG/Pajaro1.jpg" },
-    { id: 4, nom: "Juanjo", descripcio: "Un que canta molt bé.", imatge: "./IMG/Pajaro1.jpg" }
+    { id: 4, nom: "Juanjo", descripcio: "Un que canta molt bé.", imatge: "./IMG/Pajaro1.jpg" },
+    { id: 5, nom: "Juanjo", descripcio: "Un que canta molt bé.", imatge: "./IMG/Pajaro1.jpg" },
+    { id: 6, nom: "Juanjo", descripcio: "Un que canta molt bé.", imatge: "./IMG/Pajaro1.jpg" },
+    { id: 7, nom: "Juanjo", descripcio: "Un que canta molt bé.", imatge: "./IMG/Pajaro1.jpg" },
+    { id: 8, nom: "Juanjo", descripcio: "Un que canta molt bé.", imatge: "./IMG/Pajaro1.jpg" },
+    { id: 9, nom: "Juanjo", descripcio: "Un que canta molt bé.", imatge: "./IMG/Pajaro1.jpg" },
+    { id: 10, nom: "Juanjo", descripcio: "Un que canta molt bé.", imatge: "./IMG/Pajaro1.jpg" }
 ];
 
 const fosterPeople = [
