@@ -125,56 +125,59 @@ p{
     display: flex;
     justify-content: space-around;
     margin-top: 5%;
+    margin-bottom: 50px;
+}
+.contenedor4 > div > h2{
+    text-align: center;
 }
 
 .text-button, p{
     text-align:start;
 }
 
+button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
 /* Parte footer */
 
 .contenedor-footer{
     background-color: #000;
-    padding-bottom: 200px;
+    padding-bottom: 20px 0;
+    color: white;
+    text-align: center;
 }
 .section-contenedor{
     display: flex;
-    justify-content: space-between;
-
+    justify-content: space-around;
+    padding-bottom: 10px;
 }
-.contenedor-footer >.section-contenedor> div>img{
+.contenedor-footer > .section-contenedor> div>img{
     filter: invert(1);
 }
 .imgfooter{
-    max-width:8% ;
-
-}
-.contenedor-footer > div > h2{
-    text-align: left;
+    width:10%;
+    margin: 0 10px;
 }
 .contenedor-footer2{
-    margin-right: 50px;
-}
-.contenedor-footer1{
-    margin-left:auto;
-}
-
-.contenedor-footer1,.contenedor-footer2,.contenedor-footer3{
-    color:white;
-}
-.contenedor-footer1 > h2{
-    color:white;
+    margin-right: 20%;
 }
 .contenedor-footer2 > h2{
-    color:white;
+    text-align:center;
 }
-.contenedor-footer3 > h2{
-    color:white;
+.contenedor-footer > h3 {
+    margin-top: 5%;
+    text-align: center;
 }
-h3{
-    color:white;
-}
-
 
 /* Parte del PJA1_ONGADOPTADOS.html */
 /* cartas de animales */
@@ -208,7 +211,6 @@ h3{
     max-width: 100%;
     border-radius: 5px;
 }
-
 h2 {
     color: #333;
     text-align: center;
@@ -229,6 +231,11 @@ button:hover {
 h3 {
     margin-bottom: 7px;
 }
+    /* h2 {
+        color: #333;
+        text-align: center;
+    } */
+
 /* Parte del archivo ONGFORM */
 /* .collapse{
     margin-left: 20%;
