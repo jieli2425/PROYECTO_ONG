@@ -1,22 +1,29 @@
 // Emmagatzemament d'animals i persones en arrays
 const animals = [
-    { id: 1, nom: "Lucas", descripcio: "Un gos gran i amigable.", imatge: "./IMG/pexels-pixabay-247937.jpg" },
-    { id: 2, nom: "Mariano", descripcio: "Un gat juganer i afectuós.", imatge: "./IMG/Gato4.jpg" },
-    { id: 3, nom: "Filemon", descripcio: "Un ocell que canta molt bé.", imatge: "./IMG/Pajaro1.jpg" },
-    { id: 4, nom: "Juanjo", descripcio: "Un que canta molt bé.", imatge: "./IMG/Pajaro1.jpg" },
-    { id: 5, nom: "Juanjo", descripcio: "Un que canta molt bé.", imatge: "./IMG/Pajaro1.jpg" },
-    { id: 6, nom: "Juanjo", descripcio: "Un que canta molt bé.", imatge: "./IMG/Pajaro1.jpg" },
-    { id: 7, nom: "Juanjo", descripcio: "Un que canta molt bé.", imatge: "./IMG/Pajaro1.jpg" },
-    { id: 8, nom: "Juanjo", descripcio: "Un que canta molt bé.", imatge: "./IMG/Pajaro1.jpg" },
-    { id: 9, nom: "Juanjo", descripcio: "Un que canta molt bé.", imatge: "./IMG/Pajaro1.jpg" },
-    { id: 10, nom: "Juanjo", descripcio: "Un que canta molt bé.", imatge: "./IMG/Pajaro1.jpg" }
+    { id: 1, nom: "Lucas", descripcio: "", imatge: "./IMG/perroadoptado1.jpg" },
+    { id: 2, nom: "Mariano", descripcio: "", imatge: "./IMG/Gato4.jpg" },
+    { id: 3, nom: "Filemon", descripcio: "", imatge: "./IMG/Pajaro1.jpg" },
+    { id: 4, nom: "Angular", descripcio: "", imatge: "./IMG/gatoadoptado1.png" },
+    { id: 5, nom: "Antonio", descripcio: "", imatge: "./IMG/gatoadoptado2.jpg" },
+    { id: 6, nom: "Messi", descripcio: "", imatge: "./IMG/conejoadoptado2.jpg" },
+    { id: 7, nom: "Titan", descripcio: "", imatge: "./IMG/canarioadoptado1.jpg" },
+    { id: 8, nom: "Shakira", descripcio: "", imatge: "./IMG/perroadoptado2.jpg" },
+    { id: 9, nom: "Pikachu", descripcio: "", imatge: "./IMG/perroadoptado3.jpg" },
+    { id: 10, nom: "Miguel", descripcio: "", imatge: "./IMG/loroadoptado.jpg" }
 ];
 
 const fosterPeople = [
-    { id: 1, nom: "Anna", animals: [animals[0]] }, // Rex asignado a Anna
-    { id: 2, nom: "Marc", animals: [animals[1]] },  // Mittens asignado a Marc
-    { id: 3, nom: "Laura", animals: [animals[2]] }   // Tweety asignado a Laura
-];
+    { id: 1, nom: "Anna", animals: [animals[0]] }, 
+    { id: 2, nom: "Marc", animals: [animals[1]] }, 
+    { id: 3, nom: "Joan", animals: [animals[2]] },   
+    { id: 4, nom: "Jie Li", animals: [animals[3]] },  
+    { id: 5, nom: "Francisco", animals: [animals[4]] },   
+    { id: 6, nom: "Laura", animals: [animals[5]] },   
+    { id: 7, nom: "Carla", animals: [animals[6]] },   
+    { id: 8, nom: "Sofía", animals: [animals[7]] },  
+    { id: 9, nom: "Alberto", animals: [animals[8]] },   
+    { id: 10, nom: "Sebastián", animals: [animals[9]] }  
+];  
 
 // Funció per mostrar animals disponibles amb la persona assignada
 function displayAnimals() {
@@ -32,7 +39,7 @@ function displayAnimals() {
         let animalCard = document.createElement('div');
         animalCard.className = 'card'; // Assignem la classe 'card' per a estilitzar
         animalCard.innerHTML = `
-            <h3>${animal.nom}</h3>
+            <p>¡Hola soy ${animal.nom}!<p>
             <img src="${animal.imatge}" alt="${animal.nom}">
             <p>${animal.descripcio}</p>
             <p><strong>Adoptado/a por:</strong> ${personName}</p>
