@@ -226,8 +226,9 @@ button {
 button:hover {
     background-color: #0056b3;
 }
-
-
+h3 {
+    margin-bottom: 7px;
+}
 /* Parte del archivo ONGFORM */
 /* .collapse{
     margin-left: 20%;
