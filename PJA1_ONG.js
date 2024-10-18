@@ -3,13 +3,13 @@ const animals = [
     { id: 1, nom: "Lucas", descripcio: "", imatge: "./IMG/perroadoptado1.jpg" },
     { id: 2, nom: "Mariano", descripcio: "", imatge: "./IMG/Gato4.jpg" },
     { id: 3, nom: "Filemon", descripcio: "", imatge: "./IMG/Pajaro1.jpg" },
-    { id: 4, nom: "Angular", descripcio: "", imatge: "./IMG/gatoadoptado1.png" },
+    { id: 4, nom: "Angular", descripcio: "", imatge: "./IMG/conejo1.jpg" },
     { id: 5, nom: "Antonio", descripcio: "", imatge: "./IMG/gatoadoptado2.jpg" },
-    { id: 6, nom: "Messi", descripcio: "", imatge: "./IMG/conejoadoptado2.jpg" },
-    { id: 7, nom: "Titan", descripcio: "", imatge: "./IMG/canarioadoptado1.jpg" },
-    { id: 8, nom: "Shakira", descripcio: "", imatge: "./IMG/perroadoptado2.jpg" },
-    { id: 9, nom: "Pikachu", descripcio: "", imatge: "./IMG/perroadoptado3.jpg" },
-    { id: 10, nom: "Miguel", descripcio: "", imatge: "./IMG/loroadoptado.jpg" }
+    { id: 6, nom: "Messi", descripcio: "", imatge: "./IMG/conejo2.jpg" },
+    { id: 7, nom: "Titan", descripcio: "", imatge: "./IMG/periquito1.jpg" },
+    { id: 8, nom: "Shakira", descripcio: "", imatge: "./IMG/Gato5.jpg" },
+    { id: 9, nom: "Pikachu", descripcio: "", imatge: "./IMG/perro2.jpg" },
+    { id: 10, nom: "Miguel", descripcio: "", imatge: "./IMG/Gato6.jpg" }
 ];
 
 const fosterPeople = [
@@ -42,12 +42,8 @@ function displayAnimals() {
             <p>¡Hola soy ${animal.nom}!<p>
             <img src="${animal.imatge}" alt="${animal.nom}">
             <p>${animal.descripcio}</p>
-            <p><strong>Adoptado/a por:</strong> ${personName}</p>
-<<<<<<< HEAD
-            <button type="button" class="btn btn-primary">Adoptar</button>
-=======
-            <button class="btn btn-primary" onclick="adoptAnimal(${animal.id})">Adoptar</button>
->>>>>>> 2b2ba5b69a5efc49a5f27d668d8160753b611705
+            <p><strong>Adoptado/a por:</strong> <br> ${personName}</p>
+            <button type="button" >Adoptar</button>
         `;
         animalsList.appendChild(animalCard);
     });

@@ -35,7 +35,7 @@ a{
 .navbar-links {
     list-style: none;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     font-size: 30px;
     background-color: #000;
     padding: 30px;
@@ -76,24 +76,18 @@ a{
 }
 
 
-/* Parte del PJA1_INICIONG.html */
-/*.contenedor2{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}*/
+/* Parte body contenedor2 */
 .contenedor2{
-    position:relative;
-    width: 100%;
-    background-image: "./IMG/perroabandonao.jpg";
+    position: relative;
+    margin-top: -2%;
 }
 
-.overlay {
+.image-button {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 855px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -102,11 +96,11 @@ a{
     color: white;
     text-align: center;
 }
-.overlay p {
+.image-button p {
     font-size: 20px;
     margin-bottom: 20px;
 }
-.overlay button{
+.image-button button{
     background-color: black;
     color: white;
     border: none;
@@ -115,43 +109,37 @@ a{
     cursor: pointer;
     transition: background-color 0.3s;
 }
-.overlay button:hover {
+.image-button button:hover {
     background-color: #333;
 }
-.img4{
+.img2{
     width: 100%;
-}
-p{
-    text-align: center;
-    font-size: 25px;
 }
 
 .button-Adopta{
     margin-left: 35%;
 }
 
-.img2{
-    max-width: 50%;
-}
 
-/* segunda parte del body */
+/* Parte body contenedor3 */
 .img3{
     max-width: 20%;
-    margin-left: 40%;
+    margin-left: 35%;
     margin-top: 5%;
 }
 
 .contenedor3{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 .text-button2{
-    margin-right: 20%;
+    margin-right: 15%;
     text-align: center;
     margin-top: 5%;
 }
 
+/* Parte body contenedor4 */
 .contenedor4{
     display: flex;
     justify-content: space-around;
@@ -162,22 +150,16 @@ p{
     text-align: center;
 }
 
-.text-button, p{
-    text-align:start;
+.text-button3, p{
+    margin-left: 5%;
+    text-align:left;
+    font-size: 20px;
 }
 
-button {
-    background-color: #007BFF;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.img4{
+    width: 50%;
 }
 
-button:hover {
-    background-color: #0056b3;
-}
 
 /* Parte footer */
 
@@ -204,23 +186,17 @@ button:hover {
 }
 .contenedor-footer2 > h2{
     text-align:center;
-<<<<<<< HEAD
     color:white;
 }
 .contenedor-footer1 > h2{
     color:white;
-=======
-    color: white;
-}
-.contenedor-footer1 > h2{
-    text-align:center;
-    color: white;
->>>>>>> 2b2ba5b69a5efc49a5f27d668d8160753b611705
 }
 .contenedor-footer > h3 {
     margin-top: 5%;
     text-align: center;
 }
+
+
 /*Parte del PJA1_ONGADOPCION.html*/
 /*Footer*/
 .contenedor-footer-adopcion{
@@ -232,6 +208,7 @@ button:hover {
 .contenedor-footer-adopcion > h3{
     margin-top:-20px;
 }
+
 /* Parte del PJA1_ONGADOPTADOS.html */
 /* cartas de animales */
 .container {
@@ -264,11 +241,13 @@ button:hover {
     max-width: 100%;
     border-radius: 5px;
 }
+
 h2 {
     color: #333;
     text-align: center;
 }
 
+/* botones del javascript */
 button {
     background-color: #007BFF;
     color: white;
@@ -281,10 +260,13 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+
 h3 {
     margin-bottom: 7px;
 }
-/*Footer*/
+
+
+/*Parte del footer de los archivos ONGADOPCION y SOBRENOSOTROS*/
 .contenedor-footer-adoptados{
     background-color: #000;
     padding-bottom: 20px ;
