@@ -43,6 +43,7 @@ function displayAnimals() {
             <img src="${animal.imatge}" alt="${animal.nom}">
             <p>${animal.descripcio}</p>
             <p><strong>Adoptado/a por:</strong> ${personName}</p>
+            <button class="btn btn-primary" onclick="adoptAnimal(${animal.id})">Adoptar</button>
         `;
         animalsList.appendChild(animalCard);
     });

@@ -173,6 +173,11 @@ button:hover {
 }
 .contenedor-footer2 > h2{
     text-align:center;
+    color: white;
+}
+.contenedor-footer1 > h2{
+    text-align:center;
+    color: white;
 }
 .contenedor-footer > h3 {
     margin-top: 5%;
