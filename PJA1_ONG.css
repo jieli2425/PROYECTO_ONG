@@ -204,10 +204,18 @@ button:hover {
 }
 .contenedor-footer2 > h2{
     text-align:center;
+<<<<<<< HEAD
     color:white;
 }
 .contenedor-footer1 > h2{
     color:white;
+=======
+    color: white;
+}
+.contenedor-footer1 > h2{
+    text-align:center;
+    color: white;
+>>>>>>> 2b2ba5b69a5efc49a5f27d668d8160753b611705
 }
 .contenedor-footer > h3 {
     margin-top: 5%;
