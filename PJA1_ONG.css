@@ -77,19 +77,50 @@ a{
 
 
 /* Parte del PJA1_INICIONG.html */
-.contenedor2{
+/*.contenedor2{
     display: flex;
     align-items: center;
     justify-content: space-between;
+}*/
+.contenedor2{
+    position:relative;
+    width: 100%;
+    background-image: "./IMG/perroabandonao.jpg";
 }
 
-.text-button {
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    margin-right: 20%;
-    margin-left: 15%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    text-align: center;
 }
-
+.overlay p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.overlay button{
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.overlay button:hover {
+    background-color: #333;
+}
+.img4{
+    width: 100%;
+}
 p{
     text-align: center;
     font-size: 25px;
@@ -173,12 +204,26 @@ button:hover {
 }
 .contenedor-footer2 > h2{
     text-align:center;
+    color:white;
+}
+.contenedor-footer1 > h2{
+    color:white;
 }
 .contenedor-footer > h3 {
     margin-top: 5%;
     text-align: center;
 }
-
+/*Parte del PJA1_ONGADOPCION.html*/
+/*Footer*/
+.contenedor-footer-adopcion{
+    background-color: #000;
+    padding-bottom: 20px ;
+    color: white;
+    text-align: center;
+}
+.contenedor-footer-adopcion > h3{
+    margin-top:-20px;
+}
 /* Parte del PJA1_ONGADOPTADOS.html */
 /* cartas de animales */
 .container {
@@ -230,6 +275,16 @@ button:hover {
 }
 h3 {
     margin-bottom: 7px;
+}
+/*Footer*/
+.contenedor-footer-adoptados{
+    background-color: #000;
+    padding-bottom: 20px ;
+    color: white;
+    text-align: center;
+}
+.contenedor-footer-adoptados > h3{
+    margin-top:-20px;
 }
     /* h2 {
         color: #333;
