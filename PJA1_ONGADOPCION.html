@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adopción</title>
+    <title>Adopción y Animales Adoptados</title>
     <link rel="stylesheet" href="PJA1_ONG.css">
 </head>
 <body>
@@ -13,7 +13,6 @@
             <h1 class="txt1">ANIMALESCLOT</h1>
         </div>
         <div class="navbar-header2">
-            <img src="" alt="">
             <h2>Contacto</h2>
             <a class="navbar-a" href="#">ejemplo@gmail.com</a><br>
             <a class="navbar-a" href="tel:+34662020220">662020220</a>
@@ -23,30 +22,35 @@
     <div>
         <ul class="navbar-links">
             <li><a href="PJA1_INICIONG.html" class="nav-inicio">Inicio</a></li>
-            <li class="dropdown"> 
+            <li class="dropdown">
                 <a href="#">Animales</a>
                 <ul class="dropdown-content">
                     <li><a href="./PJA1_ONGADOPCION.html">Adopción</a></li>
-                    <li><a href="./PJA1_ONGADOPTADOS.html">Adoptados</a></li>
                 </ul>
             </li>
             <li><a href="./PJA1_ONGSOBRENOSOTROS.html">Sobre Nosotros</a></li>
         </ul>
     </div>
 
-    <div class="container" id="">
-        <h2>Adopción de animales</h3>
-        <div id="animals-list" class="cards-container">
-        </div>
+    <!-- Sección para la lista de animales (no adoptados o adoptados según la URL) -->
+    <div class="container" id="adoption-page">
+        <h2 id="page-title">Adopción de animales</h2>
+        <div id="animals-list" class="cards-container"></div>
     </div>
 
-    <footer class="contenedor-footer-adopcion">
-        
+    <!-- Popup para seleccionar la persona que adoptará el animal -->
+    <div id="adoption-popup" class="popup" style="display: none;">
+        <h3>Selecciona una persona para adoptar</h3>
+        <input type="hidden" id="animal-id">
+        <select id="persona-select"></select>
+        <button id="adopt-btn" class="btn btn-success">Adoptar</button>
+        <button id="close-popup-btn">Cerrar</button>
+    </div>
+
+    <footer class="contenedor-footer">
         <h3>AnimalesClot © 2024</h3>
     </footer>
+
     <script src="PJA1_ONG.js"></script>
 </body>
-<footer>
-    
-</footer>
 </html>

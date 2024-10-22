@@ -289,3 +289,38 @@ h3 {
 .nav-item{
     margin-left: 30%;
 } */
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: none;
+}
+
+.popup h3 {
+    margin-top: 0;
+}
+
+.popup select {
+    width: 100%;
+    padding: 10px;
+    margin: 15px 0;
+}
+
+.popup button {
+    background-color: #00796b;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup button:hover {
+    background-color: #004d40;
+}

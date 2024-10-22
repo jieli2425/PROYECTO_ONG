@@ -1,95 +1,111 @@
-// Emmagatzemament d'animals i persones en arrays
-const animals = [
-    { id: 1, nom: "Lucas", descripcio: "", imatge: "./IMG/perroadoptado1.jpg" },
-    { id: 2, nom: "Mariano", descripcio: "", imatge: "./IMG/Gato4.jpg" },
-    { id: 3, nom: "Filemon", descripcio: "", imatge: "./IMG/Pajaro1.jpg" },
-    { id: 4, nom: "Angular", descripcio: "", imatge: "./IMG/conejo1.jpg" },
-    { id: 5, nom: "Antonio", descripcio: "", imatge: "./IMG/gatoadoptado2.jpg" },
-    { id: 6, nom: "Messi", descripcio: "", imatge: "./IMG/conejo2.jpg" },
-    { id: 7, nom: "Titan", descripcio: "", imatge: "./IMG/periquito1.jpg" },
-    { id: 8, nom: "Shakira", descripcio: "", imatge: "./IMG/Gato5.jpg" },
-    { id: 9, nom: "Pikachu", descripcio: "", imatge: "./IMG/perro2.jpg" },
-    { id: 10, nom: "Miguel", descripcio: "", imatge: "./IMG/Gato6.jpg" }
+let animals = [
+    { id: 1, nom: "Lucas", descripcio: "Un perro amigable", imatge: "./IMG/perroadoptado1.jpg", adoptado: false, cliente: "" },
+    { id: 2, nom: "Mariano", descripcio: "Gato juguetón", imatge: "./IMG/Gato4.jpg", adoptado: false, cliente: "" },
+    { id: 3, nom: "Filemon", descripcio: "Un pájaro curioso", imatge: "./IMG/Pajaro1.jpg", adoptado: false, cliente: "" },
+    { id: 4, nom: "Angular", descripcio: "Conejo saltarín", imatge: "./IMG/conejo1.jpg", adoptado: false, cliente: "" },
+    { id: 5, nom: "Antonio", descripcio: "Gato travieso", imatge: "./IMG/gatoadoptado2.jpg", adoptado: false, cliente: "" },
+    { id: 6, nom: "Messi", descripcio: "Conejo veloz", imatge: "./IMG/conejo2.jpg", adoptado: false, cliente: "" },
+    { id: 7, nom: "Titan", descripcio: "Gato Peludo", imatge: "./IMG/Gato6.jpg", adoptado: false, cliente: "" },
+    { id: 8, nom: "Shakira", descripcio: "Periquito travieso", imatge: "./IMG/periquito1.jpg", adoptado: false, cliente: "" },
+    { id: 9, nom: "Pikachu", descripcio: "Perro adorable", imatge: "./IMG/perro2.jpg", adoptado: false, cliente: "" },
+    { id: 10, nom: "Miguel", descripcio: "Gato chupón", imatge: "./IMG/Gato5.jpg", adoptado: false, cliente: "" }
 ];
 
-const fosterPeople = [
-    { id: 1, nom: "Anna", animals: [animals[0]] }, 
-    { id: 2, nom: "Marc", animals: [animals[1]] }, 
-    { id: 3, nom: "Joan", animals: [animals[2]] },   
-    { id: 4, nom: "Jie Li", animals: [animals[3]] },  
-    { id: 5, nom: "Francisco", animals: [animals[4]] },   
-    { id: 6, nom: "Laura", animals: [animals[5]] },   
-    { id: 7, nom: "Carla", animals: [animals[6]] },   
-    { id: 8, nom: "Sofía", animals: [animals[7]] },  
-    { id: 9, nom: "Alberto", animals: [animals[8]] },   
-    { id: 10, nom: "Sebastián", animals: [animals[9]] }  
-];  
+const personas = [
+    { id: 1, nom: "Anna", animals: [] },
+    { id: 2, nom: "Marc", animals: [] },
+    { id: 3, nom: "Joan", animals: [] },
+    { id: 4, nom: "Jie Li", animals: [] },
+    { id: 5, nom: "Francisco", animals: [] },
+    { id: 6, nom: "Laura", animals: [] },
+    { id: 7, nom: "Carla", animals: [] },
+    { id: 8, nom: "Sofía", animals: [] },
+    { id: 9, nom: "Alberto", animals: [] },
+    { id: 10, nom: "Sebastián", animals: [] }
+];
 
-// Funció per mostrar animals disponibles amb la persona assignada
+// Función para mostrar animales no adoptados
 function displayAnimals() {
     let animalsList = document.getElementById('animals-list');
-    animalsList.innerHTML = ''; // Esborra la llista anterior
-    
-    animals.forEach(animal => {
-        // Buscar la persona a la qual està assignat aquest animal
-        let assignedPerson = fosterPeople.find(person => person.animals.includes(animal));
-        let personName = assignedPerson ? assignedPerson.nom : "Sense assignar"; // Comprova si té una persona assignada
+    animalsList.innerHTML = '';  // Limpiar la lista anterior
 
-        // Crear la carta de l'animal
+    animals.forEach(animal => { // Función en flecha
         let animalCard = document.createElement('div');
-        animalCard.className = 'card'; // Assignem la classe 'card' per a estilitzar
+        animalCard.className = 'card';
+        animalCard.id = `animal-card-${animal.id}`;
+
+        let adoptionInfo = '';  // Información de adopción
+        if (animal.adoptado) {
+            adoptionInfo = `<p><strong>Adoptado/a por:</strong> ${animal.cliente}</p>`;
+        }
         animalCard.innerHTML = `
             <p>¡Hola soy ${animal.nom}!<p>
             <img src="${animal.imatge}" alt="${animal.nom}">
             <p>${animal.descripcio}</p>
-            <p><strong>Adoptado/a por:</strong> <br> ${personName}</p>
-            <button type="button" >Adoptar</button>
+            <button class="btn btn-primary" onclick="showAdoptionPopup(${animal.id})" ${animal.adoptado ? 'disabled' : ''}>${animal.adoptado ? 'Adoptado' : 'Adoptar'}</button>
+            ${adoptionInfo}
         `;
-        animalsList.appendChild(animalCard);
-    });
-
-    // Omplir el select d'animals
-    let animalSelect = document.getElementById('animal-select');
-    animalSelect.innerHTML = ''; // Esborra el selector anterior
-    animals.forEach(animal => {
-        let option = document.createElement('option');
-        option.value = animal.id;
-        option.textContent = animal.nom;
-        animalSelect.appendChild(option);
+        
+        animalsList.appendChild(animalCard);  // Añadir la tarjeta del animal
     });
 }
 
-// Inicialització
-displayAnimals();
 
+// Mostrar popup de adopción
+function showAdoptionPopup(animalId) {
+    let popup = document.getElementById('adoption-popup');
+    popup.style.display = 'block';  // Mostrar el popup
+    document.getElementById('animal-id').value = animalId;
+    document.getElementById('persona-select').innerHTML = '';  // Limpiar opciones anteriores
 
-
-function fillAnimalSelect() {
-    let animalSelect = document.getElementById('animal-select');
-    animals.forEach(animal => {
+    personas.forEach(persona => {
         let option = document.createElement('option');
-        option.value = animal.nom;
-        option.textContent = animal.nom;
-        animalSelect.appendChild(option);
+        option.value = persona.id;
+        option.textContent = persona.nom;
+        document.getElementById('persona-select').appendChild(option);  // Añadir opción de persona
     });
 }
 
-// Funció per gestionar l'enviament del formulari amb validació de Bootstrap
-document.getElementById('adoption-form').addEventListener('submit', function(event) {
-    event.preventDefault();
+// Adoptar un animal
+function adoptaAnimal() {
+    let animalId = parseInt(document.getElementById('animal-id').value);  // Obtener ID del animal
+    let personaId = parseInt(document.getElementById('persona-select').value);  // Obtener ID de la persona
 
-    // Validació personalitzada de Bootstrap
-    let form = document.getElementById('adoption-form');
-    if (!form.checkValidity()) {
-        event.stopPropagation();
-        form.classList.add('was-validated');
+    let animal = animals.find(animal => animal.id === animalId);
+    let persona = personas.find(persona => persona.id === personaId);
+
+    if (animal && persona) {
+        persona.animals.push(animal);  // Añadir animal a la lista de la persona
+        animal.adoptado = true;
+        animal.cliente = persona.nom;  // Asignar el nombre del cliente
+
+        let animalCard = document.getElementById(`animal-card-${animal.id}`);
+        animalCard.innerHTML = `
+            <p>¡Hola soy ${animal.nom}!<p>
+            <img src="${animal.imatge}" alt="${animal.nom}">
+            <p>${animal.descripcio}</p>
+            <p><strong>Adoptado/a por:</strong> ${persona.nom}</p>
+            <button class="btn btn-primary" disabled>Adoptado</button>
+        `;
+
+        cerrarPopup();
     } else {
-        // Si tot és correcte, mostrar el missatge d'èxit
-        document.getElementById('success-message').style.display = 'block';
-        form.reset(); // Netejar el formulari després de l'enviament
-        form.classList.remove('was-validated'); // Resetejar la validació
+        alert("Por favor, selecciona una persona para adoptar.");
     }
-});
+}
 
-// Inicialització
-fillAnimalSelect();
+// Función para cerrar el popup
+function cerrarPopup() {
+    document.getElementById('adoption-popup').style.display = 'none';  // Ocultar el popup
+}
+
+// Verificar en qué página estamos y cargar los animales correspondientes
+if (window.location.pathname.includes('PJA1_ONGADOPTADOS.html')) {
+    displayAdoptedAnimals();  // Mostrar los animales adoptados
+} else if (window.location.pathname.includes('PJA1_ONGADOPCION.html')) {
+    displayAnimals();  // Mostrar los animales no adoptados
+}
+
+// Añadir eventos a los botones
+document.getElementById('adopt-btn').addEventListener('click', adoptaAnimal);
+document.getElementById('close-popup-btn').addEventListener('click', cerrarPopup);
