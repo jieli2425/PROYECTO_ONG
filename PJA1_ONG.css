@@ -169,10 +169,10 @@ a{
     color: white;
     text-align: center;
 }
+
 .section-contenedor{
     display: flex;
     justify-content: space-around;
-    padding-bottom: 10px;
 }
 .contenedor-footer > .section-contenedor> div>img{
     filter: invert(1);
@@ -199,38 +199,30 @@ a{
 /* Parte Sobrenosotros */
 .contenedor-sobrenosotros{
     display:flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     margin: 20px 0;
+    padding-bottom: 20px;
 }
 .contenedor-sobrenosotros > h2{
     position: relative;
-    top:-140px;
+    bottom: 120px;
     left: 190px;
     white-space:nowrap; /*esto es para que se vea el titulo en la misma linea y no se vea uno arriba y otro abajo*/
-
 }
+.contenedor-sobrenosotros > p{
+    margin-top: 100px;
+}
+
 .image-item{
     text-align: center;
-    margin: 0 20px;
+    margin: 20px 20px;
+    margin-right: 50px;
 }
 .image-item img{
     width:200px;
     height: auto;
     border-radius: 10px;
-}
-
-
-/*Parte del PJA1_ONGADOPCION.html*/
-/*Footer*/
-.contenedor-footer-adopcion{
-    background-color: #000;
-    padding-bottom: 20px ;
-    color: white;
-    text-align: center;
-}
-.contenedor-footer-adopcion > h3{
-    margin-top:-20px;
 }
 
 /* Parte del PJA1_ONGADOPTADOS.html */
@@ -293,30 +285,6 @@ h3 {
     margin-bottom: 7px;
 }
 
-
-/*Parte del footer de los archivos ONGADOPCION y SOBRENOSOTROS*/
-.contenedor-footer-adoptados{
-    background-color: #000;
-    padding-bottom: 20px ;
-    color: white;
-    text-align: center;
-}
-.contenedor-footer-adoptados > h3{
-    margin-top:-20px;
-}
-    /* h2 {
-        color: #333;
-        text-align: center;
-    } */
-
-/* Parte del archivo ONGFORM */
-/* .collapse{
-    margin-left: 20%;
-}
-
-.nav-item{
-    margin-left: 30%;
-} */
 
 .popup {
     position: fixed;
