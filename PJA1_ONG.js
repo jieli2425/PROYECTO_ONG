@@ -1,4 +1,4 @@
-//Arrays de los animales
+// Arrays de los animales
 let animals = [
     { id: 1, nom: "Lucas", descripcio: "Un perro amigable", imatge: "./IMG/perroadoptado1.jpg", adoptado: false, cliente: "" },
     { id: 2, nom: "Mariano", descripcio: "Gato juguetón", imatge: "./IMG/Gato4.jpg", adoptado: false, cliente: "" },
@@ -12,7 +12,7 @@ let animals = [
     { id: 10, nom: "Miguel", descripcio: "Gato chupón", imatge: "./IMG/Gato5.jpg", adoptado: false, cliente: "" }
 ];
 
-//Array de las personas
+// Arrays de las personas
 const personas = [
     { id: 1, nom: "Anna", animals: [] },
     { id: 2, nom: "Marc", animals: [] },
@@ -27,29 +27,32 @@ const personas = [
 ];
 
 // Mostrar animales que podemos adoptar o los que ya están adoptados
-function displayAnimals(filter = "noAdoptados") {  // 'filter' para elegir entre no adoptados o adoptados
+function displayAnimals() {
     let animalsList = document.getElementById('animals-list');
     animalsList.innerHTML = '';  // Limpiar la lista anterior
 
-    animals.forEach(animal => { // Función en flecha
-        if ((filter === "adoptados" && animal.adoptado) || (filter === "noAdoptados" && !animal.adoptado)) {
-            let animalCard = document.createElement('div');
-            animalCard.className = 'card';
-            animalCard.id = `animal-card-${animal.id}`;
+    // Recorrer todos los animales
+    for (let i = 0; i < animals.length; i++) {
+        let animal = animals[i];  // Obtener el animal actual
 
-            let adopcionInfo = '';  // Información de adopción
-            let cancelarButton = '';  // Botón de cancelar adopción
-            let adoptButton = '';  // Botón de adoptar
 
-            if (animal.adoptado) {
-                adopcionInfo = `<p><strong>Adoptado/a por:</strong> ${animal.cliente}</p>`;
-                cancelarButton = `<button class="btn btn-secondary" onclick="cancelarAdopcion(${animal.id})">Cancelación</button>`;
-                adoptButton = `<button class="btn btn-primary" disabled>Adoptado</button>`;
-            } else {
-                adoptButton = `<button class="btn btn-primary" onclick="showAdoptionPopup(${animal.id})">Adoptar</button>`;
-            }
+        let animalCard = document.createElement('div');
+        animalCard.className = 'card';
+        animalCard.id = `animal-card-${animal.id}`;
 
-            animalCard.innerHTML = `
+        let adopcionInfo = '';  // Información de adopción
+        let cancelarButton = '';  // Botón de cancelar adopción
+        let adoptButton = '';  // Botón de adoptar
+
+        if (animal.adoptado) {
+            adopcionInfo = `<p><strong>Adoptado/a por:</strong> ${animal.cliente}</p>`;
+            cancelarButton = `<button class="btn btn-secondary" onclick="cancelarAdopcion(${animal.id})">Cancelación</button>`;
+            adoptButton = `<button class="btn btn-primary" disabled>Adoptado</button>`;
+        } else {
+            adoptButton = `<button class="btn btn-primary" onclick="showAdoptionPopup(${animal.id})">Adoptar</button>`;
+        }
+
+        animalCard.innerHTML = `
                 <p>¡Hola soy ${animal.nom}!<p>
                 <img src="${animal.imatge}" alt="${animal.nom}">
                 <p>${animal.descripcio}</p>
@@ -58,54 +61,72 @@ function displayAnimals(filter = "noAdoptados") {  // 'filter' para elegir entre
                 ${cancelarButton}
             `;
 
-            animalsList.appendChild(animalCard);  // Añadir la tarjeta del animal
-        }
-    });
+        animalsList.appendChild(animalCard);  // Añadir la tarjeta del animal
+    }
 }
 
 // Función para cancelar la adopción
 function cancelarAdopcion(animalId) {
-    let animal = animals.find(animal => animal.id === animalId);
-    
-    if (animal) {
-        // Revertir la adopción
-        animal.adoptado = false;
-        animal.cliente = '';
+    for (let i = 0; i < animals.length; i++) {
+        let animal = animals[i];
 
-        // Actualizar la tarjeta del animal
-        let animalCard = document.getElementById(`animal-card-${animal.id}`);
-        animalCard.innerHTML = `
-            <p>¡Hola soy ${animal.nom}!<p>
-            <img src="${animal.imatge}" alt="${animal.nom}">
-            <p>${animal.descripcio}</p>
-            <button class="btn btn-primary" onclick="showAdoptionPopup(${animal.id})">Adoptar</button>
-        `;
+        if (animal.id === animalId) {  // Si encuentra el mismo ID del animal, revertir la adopción
+            animal.adoptado = false;
+            animal.cliente = '';
 
-        alert(`La adopción de ${animal.nom} ha sido cancelada.`);
+            // Actualizar la tarjeta del animal
+            let animalCard = document.getElementById(`animal-card-${animal.id}`);
+            animalCard.innerHTML = `
+                <p>¡Hola soy ${animal.nom}!<p>
+                <img src="${animal.imatge}" alt="${animal.nom}">
+                <p>${animal.descripcio}</p>
+                <button class="btn btn-primary" onclick="showAdoptionPopup(${animal.id})">Adoptar</button>
+            `;
+
+            alert(`La adopción de ${animal.nom} ha sido cancelada.`);
+            break;
+        }
     }
 }
 
+// Función de enseñar el popup
 function showAdoptionPopup(animalId) {
     let popup = document.getElementById('adoption-popup');
     popup.style.display = 'block';  // Mostrar el popup
     document.getElementById('animal-id').value = animalId;
     document.getElementById('persona-select').innerHTML = '';  // Limpiar opciones anteriores
 
-    personas.forEach(persona => {
+    // Recorrer el array de personas y añadirlas al select
+    for (let i = 0; i < personas.length; i++) {
+        let persona = personas[i];
         let option = document.createElement('option');
         option.value = persona.id;
         option.textContent = persona.nom;
         document.getElementById('persona-select').appendChild(option);  // Añadir opción de persona
-    });
+    }
 }
 
-// Adoptar un animal
+// Función para adoptar un animal
 function adoptaAnimal() {
     let animalId = parseInt(document.getElementById('animal-id').value);  // Obtener ID del animal
     let personaId = parseInt(document.getElementById('persona-select').value);  // Obtener ID de la persona
 
-    let animal = animals.find(animal => animal.id === animalId);
-    let persona = personas.find(persona => persona.id === personaId);
+    let animal = null;
+    let persona = null;
+
+    for (let i = 0; i < animals.length; i++) {
+        if (animals[i].id === animalId) {
+            animal = animals[i];
+            break;  // Salir del bucle al encontrar el animal
+        }
+    }
+
+    for (let i = 0; i < personas.length; i++) {
+        if (personas[i].id === personaId) {
+            persona = personas[i];
+            break;  // Salir del bucle al encontrar la persona
+        }
+    }
 
     if (animal && persona) {
         persona.animals.push(animal);  // Añadir animal a la lista de la persona
@@ -135,17 +156,11 @@ function cerrarPopup() {
     document.getElementById('adoption-popup').style.display = 'none';  // Ocultar el popup
 }
 
-// Función que asigna el filtro a los botones
-function setFilter(filter) {
-    displayAnimals(filter);
-}
-
 // Cargar los animales no adoptados por defecto al iniciar
-window.onload = function() {
+window.onload = function () {
     displayAnimals("noAdoptados");  // Mostrar los animales no adoptados al iniciar la página
 }
 
 // Añadir eventos a los botones
 document.getElementById('adopt-btn').addEventListener('click', adoptaAnimal);
 document.getElementById('close-popup-btn').addEventListener('click', cerrarPopup);
-
