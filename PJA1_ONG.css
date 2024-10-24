@@ -196,6 +196,30 @@ a{
     text-align: center;
 }
 
+/* Parte Sobrenosotros */
+.contenedor-sobrenosotros{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px 0;
+}
+.contenedor-sobrenosotros > h2{
+    position: relative;
+    top:-140px;
+    left: 190px;
+    white-space:nowrap; /*esto es para que se vea el titulo en la misma linea y no se vea uno arriba y otro abajo*/
+
+}
+.image-item{
+    text-align: center;
+    margin: 0 20px;
+}
+.image-item img{
+    width:200px;
+    height: auto;
+    border-radius: 10px;
+}
+
 
 /*Parte del PJA1_ONGADOPCION.html*/
 /*Footer*/
