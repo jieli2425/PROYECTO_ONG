@@ -161,7 +161,7 @@ a{
     display: flex;
     justify-content: space-around;
 }
-.contenedor-footer > .section-contenedor> div>img{
+.contenedor-footer > .section-contenedor> div> a>img{
     filter: invert(1);
 }
 .imgfooter{
