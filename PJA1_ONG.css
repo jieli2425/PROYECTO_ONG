@@ -1,29 +1,54 @@
 body{
     margin: auto;
 }
+
+/* Parte del navbar */
 .txt1{
-    margin-top:0%;
-    text-align: center;
-    background-color: rgb(149, 249, 149);
-    font-size: 50px;
+    margin-top:10%;
+    font-size: 40px;
 }
 
-a {
+a{
     text-decoration: none;
+    color: black;
+}
+
+.navbar-a{
     color: #000;
 }
+.img1{
+    margin-top: 5%;
+    margin-left: 5%;
+    width: 15%;
+    height: 80px;
+}
+
 .navbar{
-    background-color: rgb(149, 249, 149);
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar-header{
+    display: flex;
+}
+.navbar-header2{
+    margin-left: 40%;
 }
 .navbar-links {
     list-style: none;
-    margin-left: 35%;
     display: flex;
-    gap: 20px;
+    justify-content: space-evenly;
     font-size: 30px;
+    background-color: #000;
+    padding: 30px;
 }
+.navbar-links, a{
+    color: white;
+}   
 
-/* desplegable de animal */
+
+
+/* desplegable de Animal qeu saldra Adopcio */
 .dropdown {
     position: relative;
 }
@@ -54,9 +79,140 @@ a {
     background-color: #f0f0f0;
 }
 
+
+
+/* Parte body contenedor2 */
+.contenedor2{
+    position: relative;
+    margin-top: -2%;
+}
+
+.image-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 855px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    text-align: center;
+}
+.image-button p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.image-button button{
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.image-button button:hover {
+    background-color: #333;
+}
+.img2{
+    width: 100%;
+}
+
+.button-Adopta{
+    margin-left: 35%;
+}
+
+
+
+/* Parte body contenedor3 */
+.img3{
+    max-width: 20%;
+    margin-left: 35%;
+    margin-top: 5%;
+}
+
+.contenedor3{
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 100px;
+}
+
+.text-button2{
+    margin-right: 15%;
+    text-align: center;
+    margin-top: 10%;
+}
+
+/* Parte del footer de todas las HTMLs */
+.contenedor-footer{
+    background-color: #000;
+    padding-bottom: 20px 0;
+    color: white;
+    text-align: center;
+}
+
+.section-contenedor{
+    display: flex;
+    justify-content: space-around;
+}
+.contenedor-footer > .section-contenedor> div>img{
+    filter: invert(1);
+}
+.imgfooter{
+    width:10%;
+    margin: 0 10px;
+}
+.contenedor-footer2{
+    margin-right: 20%;
+}
+.contenedor-footer2 > h2{
+    text-align:center;
+    color:white;
+}
+.contenedor-footer1 > h2{
+    color:white;
+}
+.contenedor-footer > h3 {
+    margin-top: 5%;
+    text-align: center;
+}
+
+/* Parte Sobrenosotros */
+.contenedor-sobrenosotros{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    padding-bottom: 20px;
+}
+.contenedor-sobrenosotros > h2{
+    position: relative;
+    bottom: 120px;
+    left: 190px;
+    white-space:nowrap; /*esto es para que se vea el titulo en la misma linea y no se vea uno arriba y otro abajo*/
+}
+.contenedor-sobrenosotros > p{
+    margin-top: 100px;
+}
+
+.image-item{
+    text-align: center;
+    margin: 20px 20px;
+    margin-right: 50px;
+}
+.image-item img{
+    width:200px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Parte del PJA1_ONGADOPTADOS.html */
 /* cartas de animales */
 .container {
-    max-width: 800px;
+    max-width: 1300px;
     margin: auto;
     background: white;
     border-radius: 10px;
@@ -86,13 +242,14 @@ a {
     border-radius: 5px;
 }
 
-h3 {
+h2 {
     color: #333;
     text-align: center;
 }
 
+/* botones del javascript */
 button {
-    background-color: #007BFF;
+    background-color: black;
     color: white;
     padding: 10px 15px;
     border: none;
@@ -101,7 +258,49 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: gray;
 }
 
+#boton-btn:hover{
+    background-color: #007BFF;
+}
 
+h3 {
+    margin-bottom: 7px;
+}
+
+/* Parte del pop up*/
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: none;
+}
+
+.popup h3 {
+    margin-top: 0;
+}
+
+.popup select {
+    width: 100%;
+    padding: 10px;
+    margin: 15px 0;
+}
+
+.popup button {
+    background-color: #00796b;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup button:hover {
+    background-color: #004d40;
+}
